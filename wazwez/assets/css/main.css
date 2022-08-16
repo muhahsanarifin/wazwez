@@ -251,6 +251,10 @@ main {
 }
 
 .dropdown-content {
+	display: none;
+}
+
+.dropdown-content-show {
 	border: 1px solid var(--out-border-top);
 	background-color: var(--bg-color);
 	border-radius: 8px;
@@ -262,7 +266,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
-
 }
 
 .dropdown-content label {
@@ -286,10 +289,6 @@ main {
 	accent-color: var(--primary-color);
 	width: 18px;
 	height: 18px;
-}
-
-.dropdown-content-show {
-	display: none;
 }
 
 /* || ADD TASK SECTION */

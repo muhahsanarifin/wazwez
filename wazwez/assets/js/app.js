@@ -1,31 +1,34 @@
-document.getElementById("btnCREATETASK").addEventListener("click", btnCREATETASK);
+document.getElementById("btnCreateTask").addEventListener("click", btnCreateTask);
 
-// Add Task
-function btnCREATETASK() {
-  document.querySelector("#addTASK").classList.remove("display-task");
+// || Add Task
+function btnCreateTask() {
+  document.querySelector("#addTask").classList.remove("display-task");
 }
 
-// Dropdown
-document.getElementById("dropdownBTN").addEventListener("click", ddBTN);
-const contentShow = document.querySelector("#showddCONTENT");
+// || Dropdown
+document.getElementById("dropDownButton").addEventListener("click", dropDownButton);
 
-function ddBTN() {
+const contentShow = document.getElementById("showDropDownContent");
+
+function dropDownButton() {
   contentShow.classList.toggle("dropdown-content-show");
 }
 
-// Insert Task
-const taskLIST = document.getElementById("taskLIST");
+// || Insert Task
+const taskList = document.getElementById("taskList");
 
-document.getElementById("insertTASK").addEventListener("input",handleCHANGE);
+// || Input Task
+document.getElementById("insertTask").addEventListener("input",handleChange);
 
-function handleCHANGE () {
+function handleChange () {
 
 }
 
-document.getElementById("insertTASK").addEventListener("change", handleENTER);
+// || Change Task
+document.getElementById("insertTask").addEventListener("change", handleEnter);
 
-function handleENTER () {
-	taskLIST.insertAdjacentHTML(
+function handleEnter () {
+	taskList.insertAdjacentHTML(
     "afterbegin",
     ` <li class=" do-lists">
 					<div class="frame-result-task">
@@ -43,7 +46,7 @@ function handleENTER () {
 						</div>
 						<p class="decs" id="">Description</p>
 					</div>
-					<div class="accordion-button" onclick="AccordionClick(this)"> <!--ACCORDION SECTION-->
+					<div class="accordion-button" onclick="accordionClick(this)"> <!--ACCORDION SECTION-->
 						<i><img src="./assets/icons/Arrow - Down 2.svg" alt="Icon"></i>
 					</div>
 					<div class="accordion-content"> 
@@ -83,7 +86,7 @@ function clickMore(more) {
 }
 
 // Accordion
-function AccordionClick(click) {
+function accordionClick(click) {
 	click.classList.toggle("to-open");
 	const subTASKLIST = click.nextElementSibling;
 	if (subTASKLIST.style.maxHeight) {
