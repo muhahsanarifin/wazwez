@@ -87,7 +87,9 @@ function clickMore(more) {
 
 // Accordion
 function accordionClick(click) {
+	click.classList.toggle("rotated");
 	click.classList.toggle("to-open");
+	
 	const subTASKLIST = click.nextElementSibling;
 	if (subTASKLIST.style.maxHeight) {
 		subTASKLIST.style.maxHeight = null;

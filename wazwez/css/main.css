@@ -571,6 +571,14 @@ span.rename-task p, span.delete-task p {
 	margin-top: 0.8rem;
 }
 
+.accordion-button i img {
+	transition-delay: 0.3s;
+}
+
+.accordion-button.rotated i img {
+	transform: rotate(-180deg);
+}
+
 .accordion-content {
 	/* border: 1px solid rebeccapurple; */
 	max-height: 0;
