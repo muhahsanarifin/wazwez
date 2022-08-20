@@ -79,8 +79,6 @@ function deleteTask(mtask) {
 
 // More
 function clickMore(more) {
-	more.classList.toggle("click-to-show");
-	
 	const moreTask = more.nextElementSibling;
 		moreTask.classList.toggle("open-more-task");
 }
