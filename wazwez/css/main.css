@@ -356,7 +356,7 @@ main {
   gap: 0.2rem;
 }
 
-#decsINPUT, #dateINPUT {
+#decsInput, #dateInput {
   /* border: 1px solid green; */
   flex: 0.5;
   border-style: none;
@@ -367,9 +367,9 @@ main {
   width: 18px;
 }
 
-.display-task {
+/* .display-task {
   display: none;
-}
+} */
 
 /* || CHECKBOX SECTION */
 input[type="checkbox"] {
@@ -842,7 +842,7 @@ i.deleted-sub-do-list {
     font-size: 10px;
   }
 
-  #decsINPUT, #dateINPUT {
+  #decsInput, #dateInput {
     flex: 1;
     border-style: none;
   }

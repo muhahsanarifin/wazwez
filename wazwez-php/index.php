@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="./assets/favicon/wazwez-favicon.png">
-    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
     <title>wazwez.</title>
   </head>
   <body>
@@ -166,6 +166,6 @@
       </div>
     </main>
     <!-- <footer></footer> -->
-    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>

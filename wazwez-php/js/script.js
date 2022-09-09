@@ -85,10 +85,10 @@ function clickMore(more) {
 // Accordion
 function AccordionClick(click) {
   click.classList.toggle("to-open");
-  const subTASKLIST = click.nextElementSibling;
-  if (subTASKLIST.style.maxHeight) {
-    subTASKLIST.style.maxHeight = null;
+  const subTaskList = click.nextElementSibling;
+  if (subTaskList.style.maxHeight) {
+    subTaskList.style.maxHeight = null;
   }else {
-    subTASKLIST.style.maxHeight = subTASKLIST.scrollHeight + "px";
+    subTaskList.style.maxHeight = subTaskList.scrollHeight + "px";
   }
 }

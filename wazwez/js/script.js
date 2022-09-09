@@ -14,28 +14,36 @@ function dropDownButton() {
   contentShow.classList.toggle("dropdown-content-show");
 }
 
-// || Insert Task
+document.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    const task = {
+      title: document.getElementById("taskInput").value,
+      decs: document.getElementById("decsInput").value,
+      date: document.getElementById("dateInput").value
+    }
+    if (task?.title && task?.date) {
+      handleEnter(task);
+      document.getElementById("taskInput").value = "";
+      document.getElementById("decsInput").value = "";
+      document.getElementById("dateInput").value = "";
+    }else {
+      toast();
+    }
+  }
+});
+
+function handleEnter(task) {
+
 const taskList = document.getElementById("taskList");
 
-// || Input Task
-document.getElementById("insertTask").addEventListener("input",handleChange);
-
-function handleChange () {
-
-}
-
-// || Change Task
-document.getElementById("insertTask").addEventListener("change", handleEnter);
-
-function handleEnter () {
   taskList.insertAdjacentHTML(
     "afterbegin",
     ` <li class=" do-lists">
           <div class="frame-result-task">
             <div class="sub-frame-result-task">
               <input type="checkbox">
-              <label><p class="title-task">${this.value}</p></label>
-              <span class="badge" id=""><p>01-08-2022</p></span>
+              <label><p class="title-task">${task.title}</p></label>
+              <span class="badge" id=""><p>${task.date}</p></span>
               <div class="frame-more-task">
                 <i class="more" onclick="clickMore(this)"><img src="./assets/icons/more-vertical-black.svg" alt="more"></i>
                 <div class="more-tasks open-more-task"> <!--MORE TASKS-->
@@ -44,7 +52,7 @@ function handleEnter () {
                 </div>
               </div>
             </div>
-            <p class="decs" id="">Description</p>
+            <p class="decs">${task.decs}</p>
           </div>
           <div class="accordion-button" onclick="accordionClick(this)"> <!--ACCORDION SECTION-->
             <i><img src="./assets/icons/Arrow - Down 2.svg" alt="Icon"></i>
@@ -68,8 +76,6 @@ function handleEnter () {
       </li>
     `
   );
-
-  this.value ="";
 }
 
 // Delete Task
@@ -77,21 +83,31 @@ function deleteTask(mtask) {
   mtask.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
 }
 
-// More
+// || More
 function clickMore(more) {
   const moreTask = more.nextElementSibling;
     moreTask.classList.toggle("open-more-task");
 }
 
-// Accordion
+// || Accordion
 function accordionClick(click) {
   click.classList.toggle("rotated");
   click.classList.toggle("to-open");
   
-  const subTASKLIST = click.nextElementSibling;
-  if (subTASKLIST.style.maxHeight) {
-    subTASKLIST.style.maxHeight = null;
+  const subTaskList = click.nextElementSibling;
+  if (subTaskList.style.maxHeight) {
+    subTaskList.style.maxHeight = null;
   }else {
-    subTASKLIST.style.maxHeight = subTASKLIST.scrollHeight + "px";
+    subTaskList.style.maxHeight = subTaskList.scrollHeight + "px";
   }
+}
+
+// || Toast
+let toast = function (){
+  toastr.options = {
+    "positionClass": "toast-top-center",
+    "timeOut": "2000"
+  }
+
+  toastr["warning"]("Title & Date must be filled 😁");
 }
