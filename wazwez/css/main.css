@@ -367,9 +367,9 @@ main {
   width: 18px;
 }
 
-/* .display-task {
+.display-task {
   display: none;
-} */
+} 
 
 /* || CHECKBOX SECTION */
 input[type="checkbox"] {
